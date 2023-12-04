@@ -2,7 +2,6 @@ package com.spring.proyecto_evaluacion_docente.models.entity;
 
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 
 import java.io.Serializable;
 
@@ -14,11 +13,20 @@ public class Estudiantes implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
+    @Column(name = "user")
     private String user;
 
-    @NotEmpty
+    @Column(name = "password")
     private String password;
+
+    public Estudiantes(Long id, String user, String password) {
+        this.id = id;
+        this.user = user;
+        this.password = password;
+    }
+
+    public Estudiantes() {
+    }
 
     public Long getId() {
         return id;

@@ -1,23 +1,17 @@
 package com.spring.proyecto_evaluacion_docente.servicios.dao;
 
-import com.spring.proyecto_evaluacion_docente.models.entity.Administracion;
-import com.spring.proyecto_evaluacion_docente.models.entity.Docentes;
-import com.spring.proyecto_evaluacion_docente.models.entity.Estudiantes;
-import com.spring.proyecto_evaluacion_docente.models.entity.Evaluacion;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import com.spring.proyecto_evaluacion_docente.models.entity.*;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 public interface IAdministracionDao {
 
-    Iterable<Estudiantes> buscarEstudiantesPorNombreCurso(String nombre_curso);
-    Optional<Estudiantes> buscarEstudiantePorId(Long id);
+    Iterable<Roles> buscarEstudiantesPorNombreCurso(String nombre_curso);
+    Optional<Roles> buscarEstudiantePorId(Long id);
 
-    Optional<Docentes> buscarDoscentePorNombre(String user);
-    Optional<Docentes> buscarPorIdDocentes(Long id);
+    Optional<Roles> buscarDoscentePorNombre(String user, String nombre_curso, String semestre);
+    Optional<Roles> buscarPorIdDocentes(Long id);
 
-    Optional<Evaluacion> buscarPorEvaluacion(Long id);
+    Optional<Roles> buscarPorEvaluacion(String semestre);
 
 }

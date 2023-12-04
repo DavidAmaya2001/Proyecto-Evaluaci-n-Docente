@@ -15,11 +15,20 @@ public class HistorialDocente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
+    @Column(name = "semestre")
     private String semestre;
 
-    @NotNull
+    @Column(name = "califciacion_promedio")
     private Double califciacion_promedio;
+
+    public HistorialDocente(Long id, String semestre, Double califciacion_promedio) {
+        this.id = id;
+        this.semestre = semestre;
+        this.califciacion_promedio = califciacion_promedio;
+    }
+
+    public HistorialDocente() {
+    }
 
     public Long getId() {
         return id;

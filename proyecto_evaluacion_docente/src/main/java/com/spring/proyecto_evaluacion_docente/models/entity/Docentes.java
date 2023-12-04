@@ -24,6 +24,16 @@ public class Docentes implements Serializable {
     @OneToMany(mappedBy = "docente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<HistorialDocente> historialDocentes;
 
+    public Docentes(Long id, String user, String password, List<HistorialDocente> historialDocentes) {
+        this.id = id;
+        this.user = user;
+        this.password = password;
+        this.historialDocentes = historialDocentes;
+    }
+
+    public Docentes() {
+    }
+
     public Long getId() {
         return id;
     }

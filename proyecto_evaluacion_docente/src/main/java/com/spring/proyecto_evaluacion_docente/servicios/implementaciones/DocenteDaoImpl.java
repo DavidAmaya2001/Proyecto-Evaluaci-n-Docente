@@ -1,7 +1,6 @@
 package com.spring.proyecto_evaluacion_docente.servicios.implementaciones;
 
 import com.spring.proyecto_evaluacion_docente.models.entity.Docentes;
-import com.spring.proyecto_evaluacion_docente.models.entity.Roles;
 import com.spring.proyecto_evaluacion_docente.repository.DocentesRepository;
 import com.spring.proyecto_evaluacion_docente.repository.RolesRepository;
 import com.spring.proyecto_evaluacion_docente.servicios.dao.IDocentesDao;
@@ -28,7 +27,7 @@ public abstract class DocenteDaoImpl extends RolesDaoImpl implements IDocentesDa
 
 
     @Override
-    public Optional<Roles> buscarPorUserDocente(String user) {
+    public Optional<Docentes> buscarPorUserDocente(String user) {
         return ((DocentesRepository)repository).buscarDocentePorUser(user);
     }
 

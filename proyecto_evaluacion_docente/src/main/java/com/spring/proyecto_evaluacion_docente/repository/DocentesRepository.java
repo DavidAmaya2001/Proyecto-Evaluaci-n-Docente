@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface DocentesRepository extends RolesRepository {
 
     @Query("select docente.user from docente JOIN roles ON docente.id = roles.id_docente")
-    Optional<Roles> buscarDocentePorUser(String user);
+    Optional<Docentes> buscarDocentePorUser(String user);
 
     @Query("SELECT user FROM docente where id = ?1")
     Optional<Docentes> buscarDocenteId(Long id);
